@@ -1,0 +1,23 @@
+// In the React Project imdb clone, we faced a problem called `props drilling`
+// props drilling is the concept of having to pass a message from root level componenet to any of its child component which is very low level in the tree through only its middle child components.
+// This will be problem in hige projects to maintain state.
+
+// Inorder to solve this we are using hook called useContext()
+
+// I have created a example project above called conetxt api
+
+To Remember:
+
+export const Context = React.createContext(''); -- create this in one jsx file and import in ur app file
+
+import { Context } from <fileName>
+
+Wrap the return of App component inside <Context.Provider value ={'Message I want to Pass to all my child components'}></Context.Provider>
+
+Now, if i need that message in any of my Child Components, i need to
+
+import { Context } from <filename>
+
+const Message = React.useContext(Context)
+
+and i can use it!

@@ -1,0 +1,136 @@
+1. The useCallback Hook -- This is used memorize a function render it only on its array of dependencies gets chnaged
+syntax:
+
+const handleClick = useCallback(() => {
+    // write all the function code here
+}, [dependencies])
+
+// Example
+const handleClick = useCallback(() => {
+    console.log('Button Clicked')
+}, [])
+
+2. The useMemo Hook -- This is used to memorize a value and render it only on its array of dependencies gets chnaged
+syntax:
+
+const value = useMemo(() => {
+    // write all the value code here
+}, [dependencies])
+
+// Example
+const value = useMemo(() => {
+    return 5
+}, [])
+
+3. The useRef Hook -- This is used to create a reference to a DOM element
+
+syntax:
+
+const ref = useRef()
+
+// Real time Example
+
+const inputRef = useRef()
+
+<input ref={inputRef} type="text" />
+
+// Now, we can access the input element using inputRef.current in any of the functions and we can manipulate any of the properties of the input element.
+
+4. The useReducer Hook -- This is used to manage the state of the component in a more structured way.
+
+syntax:
+
+const [state, dispatch] = useReducer(reducer, initialState)
+
+// Real time Example
+
+const initialState = 0
+
+const reducer = (state, action) => {
+    switch(action) {
+        case 'increment':
+            return state + 1
+        case 'decrement':
+            return state - 1
+        case 'reset':
+            return initialState
+        default:
+            return state
+    }
+}
+
+const [count, dispatch] = useReducer(reducer, initialState)
+
+// Now, we can use the dispatch function to change the state of the component.
+// action is the parameter which we need to pass to the dispatch function to change the state of the component.
+// we can dispatch the action like this dispatch('increment') or dispatch('decrement') or dispatch('reset') and state will be changed accordingly.
+
+5. The useLayoutEffect Hook -- This is used to perform some action after the DOM has been updated.
+
+syntax:
+
+useLayoutEffect(() => {
+    // write all the code here
+}, [dependencies])
+
+// Real time Example
+
+useLayoutEffect(() => {
+    console.log('DOM Updated')
+}, [])
+
+6. The useImperativeHandle Hook -- This is used to expose some functions to the parent component from the child component.
+
+syntax:
+
+useImperativeHandle(ref, () => {
+    return {
+        // write all the functions here
+    }
+}, [dependencies])
+
+// Real time Example
+
+useImperativeHandle(ref, () => {
+    return {
+        focus: () => inputRef.current.focus()
+    }
+}, [inputRef])
+
+// Now, we can access the focus function from the parent component using ref.current.focus() and we can call the focus function from the parent component.
+
+7. The useDebugValue Hook -- This is used to display some value in the React DevTools.
+
+syntax:
+
+useDebugValue(value)
+
+// Real time Example
+
+useDebugValue(count)
+
+// Now, we can see the count value in the React DevTools.
+
+8. The useTransition Hook -- This is used to perform some action after the DOM has been updated.
+
+syntax:
+
+const [startTransition, isPending] = useTransition()
+
+// Real time Example
+
+const [startTransition, isPending] = useTransition()
+
+// Now, we can use the startTransition function to perform some action after the DOM has been updated.
+
+9. The useDeferredValue Hook -- This is used to defer the value of a variable.
+
+syntax:
+
+const deferredValue = useDeferredValue(value, options)
+
+// Real time Example
+
+const deferredValue = useDeferredValue(value, { timeoutMs: 1000 })
+
+// Now, the value of the variable will be deferred for 1000 milliseconds.

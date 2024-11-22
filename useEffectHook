@@ -1,0 +1,15 @@
+//useEffect Hook
+// useEffectHook is used in React functional components to perform side effects, such as data fetching, subscriptions, or DOM manipulations. 
+// It runs after every render and can be used to manage component lifecycle events.
+// It gets called when components are mounted, updated, or unmounted, if dependecies array is not provided it will run after every render.
+// dependecies array is used to specify when the effect should run, if the dependencies array is empty, the effect runs only once after the initial render.
+// If the dependencies array contains state variables, the effect runs whenever any of those variables change and after the initial render.
+
+// Syntax:
+
+useEffectHook(() => {
+    // code
+}); // -- To run for every render
+useEffectHook(() => {
+    // code
+}, [dependencies])

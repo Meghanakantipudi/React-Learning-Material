@@ -1,0 +1,31 @@
+mkdir <project_name>
+npm init -- It will create package.json and include all the common dependencies
+npm create vite@latest -- This is the buildtools which will create the basic project structre based on the framework selected.
+cd <project name given in the above command>
+npm install -- It installs all the pacakges from package.json
+npm run dev -- To Start Server
+
+
+Commands to install tailwind and use
+
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p   
+
+now update tailwind.config.js file with
+
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+and index.css with
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
